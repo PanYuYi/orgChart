@@ -1,14 +1,14 @@
-import Topology from "./index.vue";
+import topology from "./index.vue";
 
-export { Topology };
+export { topology };
 
-const components = [Topology];
-const TOPOLOGY = {
+const components = [topology];
+const Topology = {
   install(App) {
     components.forEach((item) => {
-      App.component(item.name, Topology);
+      App.component(item.name, topology);
     });
   },
 };
 
-export default TOPOLOGY;
+export default Topology;

@@ -1,6 +1,4 @@
-<script setup>
-import Topology from "./components/Topology/index.vue";
-</script>
+<script setup></script>
 
 <template>
   <Topology></Topology>
