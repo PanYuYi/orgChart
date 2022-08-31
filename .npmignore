@@ -1,5 +1,11 @@
 node_modules
 .DS_Store
+src
+pulic
+.gitignore
+.npmignore
+package-lock.json
+vite.config.js
 
 # local env files
 # .env.local
