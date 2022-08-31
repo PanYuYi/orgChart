@@ -2,10 +2,10 @@
 import { ref, onMounted } from "vue";
 import _ from "lodash";
 
-import { recursionArr, getArrayYMax } from "../utils/index";
+import { recursionArr } from "../../utils/index";
 
-import ListItem from "./ListItem.vue";
-import Dialog from "./Dialog/index.vue";
+import TopologyItem from "./TopologyItem/index.vue";
+import Dialog from "../Dialog/index.vue";
 
 const _dataArr = [
   {
@@ -175,38 +175,10 @@ const clickBtnMask = (e) => {
   menuRef.style.display = "none";
 };
 
-const mousemoveFunc = (e) => {
-  console.log("move > ", e, e.x, e.y);
-  const _x = e.x;
-  const _y = e.y;
-  e.target.style.left = _x - 50 + "px";
-  e.target.style.top = _y - 30 + "px";
-};
-
-const dragUp = (e) => {
-  console.log("up > ", e.target);
-  e.target.removeEventListener("mousemove", mousemoveFunc, true);
-};
-const dragDown = (e) => {
-  console.log("down > ", e);
-  e.target.addEventListener("mousemove", mousemoveFunc, true);
-};
-
-const userDblclick = (e) => {
-  console.log("双击 > ", e);
-  if (!dataList || !dataList.length) {
-    dataList.push({});
-  }
-};
-
 const handleContextMenu = (e, data) => {
   console.log("父级节点接收 > ", e, data);
   currentObj.value = data;
   openMenuDialog(e);
-};
-
-const bodyClick = (e) => {
-  console.log("e > ", e);
 };
 
 const addSuperNode = (e) => {
@@ -255,8 +227,13 @@ onMounted(() => {
   init();
 });
 </script>
+<script>
+export default {
+  name: "Topology",
+};
+</script>
 <template>
-  <div ref="topologyRef" class="topology-page" @click.self="bodyClick">
+  <div ref="topologyRef" class="topology-page">
     <div
       id="areaId"
       class="area-box"
@@ -266,13 +243,13 @@ onMounted(() => {
         }
       "
     >
-      <ListItem
+      <TopologyItem
         v-for="(item, index) in dataList"
         :key="index"
         :itemData="item"
         @handleContextMenu="handleContextMenu"
       >
-      </ListItem>
+      </TopologyItem>
     </div>
     <div class="menu-box" id="menuPage" @click.self="clickBtnMask">
       <div class="btn-box" id="btnBox">

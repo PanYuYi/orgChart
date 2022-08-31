@@ -1,7 +1,7 @@
 {
-  "name": "test",
-  "private": true,
-  "version": "0.0.0",
+  "name": "topology",
+  "private": false,
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -18,5 +18,21 @@
     "sass-loader": "^13.0.2",
     "vite": "^2.9.9",
     "vite-plugin-vue-setup-extend": "^0.4.0"
-  }
+  },
+  "description": "简易版组织关系图",
+  "main": "topology.es.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PanYuYi/orgChart.git"
+  },
+  "keywords": [
+    "topology",
+    "relation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PanYuYi/orgChart/issues"
+  },
+  "homepage": "https://github.com/PanYuYi/orgChart#readme"
 }

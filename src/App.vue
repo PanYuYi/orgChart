@@ -1,9 +1,9 @@
 <script setup>
-import topologyDemo from "./components/topologyDemo.vue";
+import Topology from "./components/Topology/index.vue";
 </script>
 
 <template>
-  <topologyDemo></topologyDemo>
+  <Topology></Topology>
 </template>
 
 <style>
