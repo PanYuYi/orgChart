@@ -16,17 +16,18 @@ export default defineConfig({
     host: "0.0.0.0",
   },
   build: {
-    outDir: "topology",
+    outDir: "dist",
     lib: {
       entry: path.resolve(__dirname, "./src/components/Topology/index.js"),
       name: "topology",
       fileName: "topology",
     },
     rollupOptions: {
-      external: ["vue"],
+      external: ["vue", "lodash"],
       output: {
         globals: {
           vue: "Vue",
+          lodash: "_",
         },
       },
     },
