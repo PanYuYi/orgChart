@@ -1,0 +1,26 @@
+node_modules
+.DS_Store
+
+# local env files
+# .env.local
+# .env.*.local
+*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*s
+yarn.lock
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.eslintcache
+
+.env.development
